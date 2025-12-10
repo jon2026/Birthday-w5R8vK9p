@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday Baby Girl!</title>
+    <title>Happy Birthday Baby girl!</title>
     <style>
         * {
             margin: 0;
@@ -14,7 +14,7 @@
         body {
             overflow: hidden;
             font-family: 'Georgia', serif;
-            background: #0d1755;
+            background: #0a0e27;
             height: 100vh;
             position: relative;
         }
@@ -55,7 +55,7 @@
             letter-spacing: 0.3rem;
             text-transform: uppercase;
             margin-bottom: 2rem;
-            animation: fadeIn 2s ease-in;
+            animation: fadeIn 1s ease-in;
             text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700, 0 0 30px #ffa500;
         }
 
@@ -76,7 +76,14 @@
                 0 0 70px #ff00ff,
                 0 0 80px #ff00ff;
             animation: neonPulse 2s ease-in-out infinite, float 3s ease-in-out infinite;
+            animation-delay: 1s;
+            animation-fill-mode: backwards;
             letter-spacing: 0.2rem;
+            opacity: 0;
+        }
+        
+        .name.show {
+            animation: fadeIn 2s ease-in 1s forwards, neonPulse 2s ease-in-out infinite 3s, float 3s ease-in-out infinite 3s;
         }
 
         @keyframes neonPulse {
@@ -133,6 +140,19 @@
             font-style: italic;
             animation: fadeIn 3s ease-in 1s backwards;
             text-shadow: 0 0 10px #ffb6c1;
+        }
+        
+        .signature {
+            position: fixed;
+            bottom: 30px;
+            right: 40px;
+            font-size: 1.5rem;
+            color: #ffd700;
+            font-style: italic;
+            font-family: 'Brush Script MT', cursive;
+            animation: fadeIn 2s ease-in 5s backwards;
+            text-shadow: 0 0 10px #ffd700;
+            z-index: 100;
         }
 
         .candle-container {
@@ -208,7 +228,7 @@
     <div class="container">
         <div class="birthday-text">✨ Happy Birthday ✨</div>
         <div class="name-container">
-            <div class="name">Baby Girl</div>
+            <div class="name">Baby girl</div>
         </div>
         <div class="wish">May your day be filled with magic!</div>
         
@@ -220,6 +240,8 @@
             <div class="candle"><div class="flame"></div></div>
         </div>
     </div>
+    
+    <div class="signature">from your man</div>
 
     <script>
         // Create starry background
@@ -276,6 +298,11 @@
             
             setTimeout(() => particle.remove(), 5000);
         }, 300);
+        
+        // Trigger name animation after page load
+        setTimeout(() => {
+            document.querySelector('.name').classList.add('show');
+        }, 100);
     </script>
 </body>
 </html>
