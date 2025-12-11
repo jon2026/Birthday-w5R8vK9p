@@ -17,6 +17,13 @@
             background: #0a0e27;
             height: 100vh;
             position: relative;
+            width: 100vw;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                overflow-x: hidden;
+            }
         }
 
         .stars {
@@ -58,6 +65,14 @@
             animation: fadeIn 1s ease-in;
             text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700, 0 0 30px #ffa500;
         }
+        
+        @media (max-width: 768px) {
+            .birthday-text {
+                font-size: 1.8rem;
+                letter-spacing: 0.2rem;
+                margin-bottom: 1.5rem;
+            }
+        }
 
         .name-container {
             perspective: 1000px;
@@ -76,14 +91,21 @@
                 0 0 70px #ff00ff,
                 0 0 80px #ff00ff;
             animation: neonPulse 2s ease-in-out infinite, float 3s ease-in-out infinite;
-            animation-delay: 1s;
+            animation-delay: 0.3s;
             animation-fill-mode: backwards;
             letter-spacing: 0.2rem;
             opacity: 0;
         }
         
+        @media (max-width: 768px) {
+            .name {
+                font-size: 3rem;
+                letter-spacing: 0.1rem;
+            }
+        }
+        
         .name.show {
-            animation: fadeIn 2s ease-in 1s forwards, neonPulse 2s ease-in-out infinite 3s, float 3s ease-in-out infinite 3s;
+            animation: fadeIn 1.2s ease-in 0.3s forwards, neonPulse 2s ease-in-out infinite 1.5s, float 3s ease-in-out infinite 1.5s;
         }
 
         @keyframes neonPulse {
@@ -142,6 +164,13 @@
             text-shadow: 0 0 10px #ffb6c1;
         }
         
+        @media (max-width: 768px) {
+            .wish {
+                font-size: 1.2rem;
+                padding: 0 20px;
+            }
+        }
+        
         .signature {
             position: fixed;
             bottom: 30px;
@@ -150,9 +179,17 @@
             color: #ffd700;
             font-style: italic;
             font-family: 'Brush Script MT', cursive;
-            animation: fadeIn 2s ease-in 5s backwards;
+            animation: fadeIn 2s ease-in 2.5s backwards;
             text-shadow: 0 0 10px #ffd700;
             z-index: 100;
+        }
+        
+        @media (max-width: 768px) {
+            .signature {
+                font-size: 1.2rem;
+                bottom: 20px;
+                right: 20px;
+            }
         }
 
         .candle-container {
@@ -162,6 +199,13 @@
             margin-top: 3rem;
             animation: fadeIn 4s ease-in 2s backwards;
         }
+        
+        @media (max-width: 768px) {
+            .candle-container {
+                gap: 15px;
+                margin-top: 2rem;
+            }
+        }
 
         .candle {
             position: relative;
@@ -169,6 +213,13 @@
             height: 80px;
             background: linear-gradient(to bottom, #ff6b9d 0%, #c44569 100%);
             border-radius: 5px 5px 0 0;
+        }
+        
+        @media (max-width: 768px) {
+            .candle {
+                width: 15px;
+                height: 60px;
+            }
         }
 
         .flame {
